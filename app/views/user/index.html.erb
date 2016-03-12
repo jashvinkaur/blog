@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="application.css">
+	</head>
+	<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1 class="T"><center><b>All Posts</b></center></h1>
+			
+		</div><br><br>
+		<div id="lo"><%= link_to "Logout",session_logout_path ,{style:"color: #4169E1"}%></div>
+		<div id="you">	<%= link_to "Post", new_post_path, {style: "color: #4169E1"}%></div>
+		<div id="my">	<%= link_to "My Post", post_index_path, {style: "color: #4169E1"}%></div>
+		<div id="users"><%= link_to "All Users", session_show_path,{style: "color: #4169E1"} %>
+	  </div>
+		  <%unless @posts.blank? %>
+					<hr>
+					<% @posts.each do|post| %>
+					<div class="P">Post By:</div> 
+					<%= find_user(post.user_id).name%>
+					<div class="P">Title:</div>
+					<%= post.title %><br>
+					<div class="P">Description:</div>
+					<%= post.description %><br>
+					<%# debugger%>
+					<ul type="square">
+						<% @comment = post.comments %>
+						<div class="P">Comments<br></div>
+						<% @comment.each do|com|%>
+						<li><%= com.description%></li>
+						<small style="color:#4169E1">By: <%= find_user(com.user_id).name %> | <%= find_user(com.user_id).created_at%> | <%=link_to "Delete",post_comment_path(post.id, com.id), :method => :delete  %> | <%= link_to "Edit", edit_post_comment_path(post.id,com.id) if @current_user.id == com.user_id%>
+						</small>
+						<%end%><br>
+							<%= link_to "Comment", {:controller=>"comment",:action =>"new",:post=> post.id }%>
+					</ul>
+					<hr>
+						<%end%>
+		  <%end%>
+		  </div>	
+	</body>
+</html>
+
+
+							
+							
+
+
+
+		  	
+		
+					
+						
+						
+							
+
+							
+								
+							  
+	
+	
+
+					
+						
+							
+		  		
+		  	

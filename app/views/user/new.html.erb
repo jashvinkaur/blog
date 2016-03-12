@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="application.css">
+	</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<h1 class="T"><center><b>New Sign Up</b></center></h1>
+	</div><br><br>
+		<div id="left_navigation"><br><br>
+			<%= form_for @user , url:{action:"create"} do|f|%>
+				<% if @user.errors.any? %>
+							<h1>Error</h1>
+							<ul>
+								<%= @user.errors.full_messages%>
+								<%end%>
+							</ul>	
+				<p style="Color:White"><b>
+					<%= f.label  :name  %>
+					<p><%= f.text_field :name %></p><br><br>
+					</b>
+				</p>
+				<p style="color:White"><b>
+					<%= f.label  :email %> 
+					<p><%= f.text_field :email %></p><br><br>
+					</b>
+				</p>
+				<p style="Color:White"><b>
+					<%= f.label :password%>
+					<p><%= f.password_field :password %></p><br><br>
+					</b>
+				</p>
+					<p style="Color:White"><b>
+						Confirm password
+						<p><%= f.password_field :password %></p><br><br>
+						</b>
+				</p>
+				<%= f.submit "Create", {style: "color: #4169E1"}%>
+			<%end%>
+		</div>
+		</div>
+</body>
+</html>
+ 
+			
+
+			
+
+
+		 		
+		 		
+			
+
+				

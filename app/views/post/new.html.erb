@@ -1,0 +1,40 @@
+
+ <!DOCTYPE html>
+<html>	
+	<head>
+		<title>New Post</title>
+		<link rel="stylesheet" type="text/css" href="application.css">
+	</head>
+	<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1 class="T"><center><b>New Post</b></center></h1>
+		</div><br><br>
+		<div id="lo"><%= link_to "Home",user_index_path ,{style:"color: #4169E1"}%></div>
+		<div id="left_navigation"><br><br>
+			<%= form_for @post, url:{action:"create"} do|f|%>
+				<%if @post.errors.any? %>
+					<h1>Error</h1>
+					<ul>
+					<%= @post.errors.full_messages%>
+					</ul>
+				<%end%>
+				<div class="new"style="Color:white"><b>
+					<%= f.label  :title  %>
+					<p><%= f.text_field :title, :size=> 30 %></p><br><br></b>
+				</div>
+				<div class= "new"style="color:white"><b>
+					<%= f.label  :description %> 
+					<p><%= f.text_area :description, cols: "65", rows: "7" %></p></b>
+					<%= f.submit "Create" ,{style: "color: #4169E1"}%>
+				</div>
+			<%end%>
+		</div>
+		</div>
+	</body>
+</html>
+
+<!-- remote: true -->
+					
+	
+					

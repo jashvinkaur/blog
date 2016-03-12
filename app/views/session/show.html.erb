@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="application.css">
+</head>
+
+
+<body>
+
+	<div id="wrapper">
+	<div id="header">
+		<h1 class="T"><center><b>All User</b></center></h1>
+	</div><br><br>
+		<div id="lo"><%= link_to "Logout",session_logout_path ,{style:"color: #4169E1"}%></div>
+		<div id="you">	<%= link_to "Post", new_post_path, {style: "color: #4169E1"}%></div>
+		<div id="my">	<%= link_to "My Post", post_index_path, {style: "color: #4169E1"}%></div>
+		<div id="home"><%= link_to "Home",user_index_path ,{style:"color: #4169E1"}%></div>
+
+			<ul type="Square">
+		
+					<% @users.each do|user| %>
+						<li><%= link_to user.name ,user_path(user),{style:"color: #4169E1"}%><br></li>
+						<hr>
+					<% end %>
+				</ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+				
+				    
+
+
+
+

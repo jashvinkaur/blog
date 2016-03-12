@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="application.css">
+	</head>
+		<body bgcolor="Burlywood">
+			<div id="header">
+				<h1><center>Edit User</center></h1>
+			</div>
+				<%= form_for @user do|f|%>
+						<% if @user.errors.any? %>
+								<h1>Error</h1>
+								<ul>
+									<%= @user.errors.full_messages%>
+								</ul>
+						<%end%>
+						<p style="Color:brown"><b>
+							<%= f.label :name %>
+							<p><%= f.text_field :name %> </p><br><br></b>
+						</p>
+							<p style="Color:brown"><b>
+					   	<%= f.label :password%>
+							<p><%= f.password_field :password %></p><br><br>
+							</b>
+						</p>
+						<p style="color: brown"><b>
+							<%= f.label :email %>
+							<p><%= f.text_field :email %> </p><br><br></b>
+						</p>
+						<p style="Color:brown"><b>
+							<%= f.label :contact %>
+							<p><%= f.text_field :contact %></p><br><br></b>
+						</p>
+						<p style="Color:brown"><b>
+							<%= f.label :college %>
+							<p><%= f.text_field :college %></p><br><br></b>
+						</p>
+					
+						<%= f.submit "Update User" %>
+				<%end%>
+		</body>
+</html>
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+

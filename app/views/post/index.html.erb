@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="application.css">
+	</head>
+	<body>
+	<div id="wrapper">
+		<div id="header">
+			<div class="T"><b>Posts By <%= @current_user.name%></b></div>
+		</div><br><br>
+		
+		<div id="lo"><%= link_to "Home",user_index_path ,{style:"color: #4169E1"}%></div>
+		<div id="you">	<%= link_to "Post", new_post_path, {style: "color: #4169E1"}%></div>
+	  <%unless @posts.blank? %>
+	  <hr>
+			<% @posts.each do|post| %>
+				<div class="P">Title<br></div>
+				<%= post.title %><br>
+				<div class="P">Description <br></div>
+				<%= post.description %><br>
+				<%=link_to"Delete", post, :method => :delete  %>|
+				<%= link_to "Edit", edit_post_path(post)%>
+				<hr>
+			<%end%>
+		<%end%>
+		</div>
+	</body>
+</html>	  	
+		

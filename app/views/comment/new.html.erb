@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="application.css">
+	</head>
+	<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1 class="T"><center><b>Comment</b></center></h1>
+		</div><br><br>
+		<div id="lo"><%= link_to "Home",user_index_path ,{style:"color: #4169E1"}%></div>
+			<div id="left_navigation"><br><br>
+				<%= form_for @comment, url:{action:"create"} do|f|%>
+					<div class="new"style="Color:white"><b>
+					<%= f.label  :comment  %>
+					<%= f.hidden_field :post_id, :value => params[:post] %>
+					<div><%= f.text_area :description, cols: "65", rows: "7"%></div></b><br><br>
+					</div>
+					<%= f.submit "Create", {style: "color: #4169E1"}%>
+				<%end%>
+			</div>
+			</div>
+	</body>
+</html>
+						
+					
+					
+				
+
+			
+ 
+				
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="application.css">
+	</head>
+	<body>
+	<div id="wrapper">
+		<div id="tech" ><b>The Techno Freakers..</b></div>
+		<div id="h" ><b>View With Few</b></div>
+		<div id="login"><br><br>
+			<%= form_tag(:action => 'login')do|f|%>
+			<div class="P" style="color:white"><b>
+				Email
+				<div><%= text_field_tag :email %></div></b><br><br>
+			</div>
+			<div class="P" style="color:white"><b>
+				Password
+			<div><%= password_field_tag :password %></div></b><br><br>
+			</div>
+			<%= submit_tag ('Login'),{style: "color: #4169E1"} %> | <%= link_to "Sign Up" ,new_user_path, {style: "color: #4169E1"}%>
+			<%end%>
+		</div>
+		</div>
+	</body>
+</html>
+		
+			
+			
+		
+	
+			
+
+	
+
+	
+	
+	
+	
+	
+	
+
+
+				
+		
+
+				
+		
